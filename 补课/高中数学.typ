@@ -245,4 +245,83 @@ $ f(x)=x^0 #h(1.5em)g(x)=1 $
 $ f(x)=x/(sqrt(x)^2) #h(1.5em)g(x)=(sqrt(x)^2)/x $
 == 函数的性质
   单调性、奇偶性、周期性
+
+  #definition([*单调性*])[
+
+$forall x_1,x_2 in D,  x_1 < x_2$时都有$f(x_1) < f(x_2)$，原函数在定义域$D$上是单调递增的,原函数为增函数；
+
+$forall x_1,x_2 in D,x_1 < x_2$时都有$f(x_1) > f(x_2)$，原函数在定义域$D$上是单调递减的，原函数为减函数。
+  ]
+  #definition([*单调区间*])[
+    
+    
+    $exists D_1 subset.eq D,forall x_1,x_2 in D_1,  x_1 < x_2$时都有$f(x_1) < f(x_2)$，我们就称$f(x)$在区间$D_1$上是*单调递增*的，$D_1$是$f(x)$的单调增区间；
+
+    $exists D_1 subset.eq D,forall x_1,x_2 in D_1,  x_1 > x_2$时都有$f(x_1) > f(x_2)$，我们就称$f(x)$在区间$D_1$上是*单调递减*的，$D_1$是$f(x)$的单调减区间；
+    
+    类似地，请给出单调不递增和单调不递减的定义。
+    // 如果$x_1 < x_2$时都有$f(x_1) > f(x_2)$，则称$f(x)$在区间$D_1$上是单调递减的。
+  ]
+  
+  #definition([*奇偶性*])[
+  
+  奇函数：$forall x in D, -x in D, f(-x)=-f(x)$
+  
+  偶函数：$forall x in D, -x in D,f(-x)=f(x)$
+  
+  *注意定义域一定要对称*
+  ]
+  #definition([*周期性*])[
+  周期函数：$exists T>0,forall x in D,f(x+T)=f(x)$，其中$T$为周期。
+  ]
+
+
+  // 接下来我们定义函数的最值，最值是指函数在定义域$D$内的最大值和最小值。
+  #definition([*最值*])[
+    
+    $forall x in D,f(x)<=M, exists x in D,f(x)=M$,则称$M$为函数$f(x)$在$D$上的最大值；
+    
+    $forall x in D,f(x)>=m, exists x in D,f(x)=m$,则称$m$为函数$f(x)$在$D$上的最小值。
+  
+    类似单调区间的定义，我们也可以定义某个区间上的最大值和最小值。
+  ]
+
+
+  // #definition([*极值*])[
+  //   $exists D_1 subset.eq D, forall x in D_1,f(x)<=M, exists x in D_1,f(x)=M$,则称$M$为函数$f(x)$在$D$上的极大值；
+  //   $exists D_1 subset.eq D,forall x in D_1,f(x)>=m, exists x in D_1,f(x)=m$,则称$m$为函数$f(x)$在$D$上的最小值。
+  // ]
+
+#example()[
+求$|x^2-5x+6|$的单调增区间以及$x in(1.5,2.5)$时候的最小值，这时候存在最大值吗？$x in [1.5,2.5]$呢？
+]
+#example([12.2])[
+$forall x_1 ,x_2 in (-oo,0]$ , $x_1 > x_2$时都有$f(x_1) > f(x_2),g(x_1)>g(x_2)$
+
+因为$f(x)$是偶函数$f(x)=f(-x)$,$g(x)$是奇函数,$g(x)+g(-x)=0$。
+
+$forall -x_1 ,-x_2 in (0,oo]$ , $-x_1 < -x_2$时都有$f(x_1) > f(x_2),-g(x_1)>-g(x_2),g(x_1)<g(x_2)$
+
+假设$g(x)$值域为$Z$所以
+$forall x_3,x_4 in Z,x_3<x_4$时都有$f(x_3)>f(x_4)$，即$f(g(x))$在区间$[0,oo)$单调递减。 $g(f(x))$同理。
+]
+
+#definition([*对称性*])[
+    $exists t,  forall x in RR , "当"(t+x) in D "时","有"(t-x) in D, f(t+x)=f(t-x)$ ，就说$f(x)$关于$x=t$对称
+]
+
+#example()[
+  $forall x in RR ,f(a+x)=f(b-x)$恒成立，分析对称性
+// 求$|x^2-5x+6|$的单调增区间以及$x in(1.5,2.5)$时候的最小值，这时候存在最大值吗？$x in [1.5,2.5]$呢？
+]
+#definition([*中心对称*])[
+    $exists t,  forall x in RR , "当"(t+x) in D "时","有"(t-x) in D, f(t+x)+f(t-x)=2m$ ，就说$f(x)$关于点$(t,m)$对称
+]
+
+#example()[
+  $f(-1+x)+f(5-x)=4$关于哪个点中心对称。
+// 求$|x^2-5x+6|$的单调增区间以及$x in(1.5,2.5)$时候的最小值，这时候存在最大值吗？$x in [1.5,2.5]$呢？
+]
+
+*其实到这里我们也可以法线，偶函数是关于$x=0$对称的,奇函数是关于$(0,0)$的中心对称*
 == 函数的极限
